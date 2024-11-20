@@ -20,7 +20,7 @@ class UserController extends Controller
         if(is_file($file)){
             if($file->extension() == "mp3"){
                 $name = auth()->user()->discord_id . "." . $file->extension();
-                $path = Storage::putFileAs('sonidos', $file, $name);
+                $path = Storage::putFileAs('public_sonidos', $file, $name);
 
                 $sonido_usuario = auth()->user()->sonido;
                 if(empty($sonido_usuario)){
